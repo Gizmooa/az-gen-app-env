@@ -40,7 +40,7 @@ az login
 Once you're set up, run the CLI like this:
 
 ```bash
-az-gen-app-env generate <app_name> <resource_group> <subscription_id>
+uv run az-gen-app-env generate <app_name> <resource_group> <subscription_id>
 ```
 
 This will create an `appsettings.json` that can be used for your C#/.NET application.
