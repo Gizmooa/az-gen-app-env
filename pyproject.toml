@@ -1,0 +1,25 @@
+[project]
+name = "az-gen-app-env"
+version = "0.1.0"
+description = "CLI tool to generate appsettings.json from Azure App Service environment variables and Key Vault secrets."
+readme = "README.md"
+requires-python = ">=3.13"
+dependencies = [
+    "azure-identity>=1.23.0",
+    "azure-keyvault-secrets>=4.10.0",
+    "azure-mgmt-web>=9.0.0",
+    "click>=8.2.1",
+]
+
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
+
+[project.scripts]
+az-gen-app-env = "cli:cli"
+
+[tool.setuptools]
+package-dir = {"" = "src"}
+
+[tool.setuptools.packages.find]
+where = ["src"]
