@@ -6,9 +6,13 @@ from parser import build_nested_dict
 from exceptions import AppServiceAccessError, KeyVaultAccessError
 from output import write_appsettings_json
 
-@click.group(help="🚀 Generate appsettings.json from Azure App Service environment variables and Key Vault secrets.")
+
+@click.group(
+    help="🚀 Generate appsettings.json from Azure App Service environment variables and Key Vault secrets."
+)
 def cli():
     pass
+
 
 @cli.command()
 @click.argument("app_name")
@@ -32,17 +36,15 @@ def generate(app_name, resource_group, subscription_id, output):
         click.echo(f"💾 Writing appsettings.json to '{output}'...")
         write_appsettings_json(nested, output)
 
-        click.secho("✅ Done!")
+        click.echo("✅ Done!")
 
     except AppServiceAccessError as e:
-        click.secho(f"🚫 [App Service Error] {e}")
-        raise SystemExit(2)
+        click.echo(f"🚫 [App Service Error] {e}")
     except KeyVaultAccessError as e:
-        click.secho(f"🚫 [Key Vault Error] {e}")
-        raise SystemExit(3)
+        click.echo(f"🚫 [Key Vault Error] {e}")
     except Exception as e:
-        click.secho(f"💥 [Unexpected Error] {e}")
-        raise SystemExit(99)
+        click.echo(f"💥 [Unexpected Error] {e}")
+
 
 if __name__ == "__main__":
     cli()
