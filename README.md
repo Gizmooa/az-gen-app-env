@@ -29,7 +29,13 @@ Then lets create the virtual environment using uv
 uv sync
 ```
 
-Then make sure you are logged into Azure
+Now lets make sure you can run the command globally
+
+```bash
+uv tool install . -e
+```
+
+Lastly, make sure you are logged into Azure
 
 ```bash
 az login
@@ -37,10 +43,10 @@ az login
 
 ## ⚡️ Usage
 
-Once you're set up, run the CLI like this:
+Once you're set up, navigate to the project where you want to generate the `appsettings.json` and run:
 
 ```bash
-uv run az-gen-app-env generate <app_name> <resource_group> <subscription_id>
+az-gen-app-env <app_name> <resource_group> <subscription_id>
 ```
 
 This will create an `appsettings.json` that can be used for your C#/.NET application.

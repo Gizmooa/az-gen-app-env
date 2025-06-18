@@ -7,14 +7,7 @@ from exceptions import AppServiceAccessError, KeyVaultAccessError
 from output import write_appsettings_json
 
 
-@click.group(
-    help="🚀 Generate appsettings.json from Azure App Service environment variables and Key Vault secrets."
-)
-def cli():
-    pass
-
-
-@cli.command()
+@click.command()
 @click.argument("app_name")
 @click.argument("resource_group")
 @click.argument("subscription_id")
@@ -36,7 +29,7 @@ def generate(app_name, resource_group, subscription_id, output):
         click.echo(f"💾 Writing appsettings.json to '{output}'...")
         write_appsettings_json(nested, output)
 
-        click.echo("✅ Done!")
+        click.echo("✅  Done!")
 
     except AppServiceAccessError as e:
         click.echo(f"🚫 [App Service Error] {e}")
