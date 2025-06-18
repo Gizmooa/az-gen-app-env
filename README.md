@@ -20,7 +20,7 @@ Start by cloning down the repo and jump into the repository
 
 ```bash
 git clone https://github.com/your-org/az-gen-app-env.git
-cd az-gen-app-env
+az-gen-app-env
 ```
 
 Then lets create the virtual environment using uv
