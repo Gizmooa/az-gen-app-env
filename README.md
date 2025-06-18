@@ -8,7 +8,7 @@ No more copying, no more guessing — just quick and easy local dev!
 
 ## 🚀 Features
 
-- Fetches app settings from Azure App Service
+- Fetches app settings from Azure Web App Service
 - Resolves secrets from Azure Key Vault
 - Generates a clean `appsettings.json` file
 
