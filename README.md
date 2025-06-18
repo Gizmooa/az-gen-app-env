@@ -19,8 +19,8 @@ You’ll need **Python 3.13+**, **UV**, and the **Azure CLI** installed.
 Start by cloning down the repo and jump into the repository
 
 ```bash
-git clone https://github.com/your-org/az-gen-app-env.git
-az-gen-app-env
+git clone https://github.com/Gizmooa/az-gen-app-env.git
+cd az-gen-app-env
 ```
 
 Then lets create the virtual environment using uv
